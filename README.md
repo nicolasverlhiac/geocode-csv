@@ -67,6 +67,20 @@ You can use the provided `sample-input.csv` file located in `/data` as a base by
 * Docker
 * Google Maps API key
 
+## Supported Architectures
+This geocoding solution supports the following architectures:
+
+- linux/386
+- linux/amd64
+- linux/arm/v5
+- linux/arm/v7
+- linux/arm64/v8
+- linux/mips64le
+- linux/ppc64le
+- linux/s390x
+
+Whether you're running on a traditional x86 architecture or ARM-based devices, you can leverage this geocoding solution for your CSV files.
+
 ## Contributing
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
