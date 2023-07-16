@@ -12,7 +12,9 @@ It includes a Docker image that utilizes the Google Maps library and Pandas to a
 
 ## How to use this image
 
-You can use the geocoding solution by directly pulling the Docker image from Docker Hub or by building the image from the source code.
+You can use the geocoding solution by directly pulling the Docker image from Docker Hub or by building the image from the source code. 
+
+_**Note:** Make sure you have Docker installed and running on your system before executing the docker command._
 
 ### Using Docker Hub:
 
@@ -28,6 +30,7 @@ docker pull nicolasverlhiac/geocode-csv
 3. Create a `data` directory and place your input CSV file in the `data` directory.
 
 	* **You need to name the CSV file `input.csv`.**
+    * You can use the provided `sample-input.csv` file as a base by duplicating it and renaming the duplicate to `input.csv`. This file already has the required CSV structure and serves as a template for your own data.
 4. Execute the Docker container:
 
 ```bash
@@ -42,11 +45,17 @@ docker run --rm -v "$(pwd)/data:/app/csv" -e GOOGLE_API_KEY=your_key nicolasverl
 docker build -t nicolasverlhiac/geocode-csv .
 ```
 
-2. 
+This command builds the Docker image using the Dockerfile in the current directory. The -t flag allows you to specify a tag or name for the image. In this example, the image is tagged as nicolasverlhiac/geocode-csv.
+
+2. Once the image is built, you can use it in the same way as described in the "Using Docker Hub" section. **Follow steps 2 to 5** mentioned in the "[Using Docker Hub](#using-docker-hub)" section to geocode your CSV file.
+
+By building the image locally, you have more control over the image and can make modifications if needed. Additionally, building the image locally ensures that you have the latest version of the code and dependencies.
 
 ### Required CSV fields (`input.csv` CSV example)
 
 Example of a CSV file to be placed in the `data/input.csv` folder before executing the Docker command.
+
+You can use the provided `sample-input.csv` file located in `/data` as a base by duplicating it and renaming the duplicate to `input.csv`. This file already has the required CSV structure and serves as a template for your own data.
 
 | name                | address                     | postcode | state | city                 | country | latitude | longitude |
 |---------------------|-----------------------------|----------|-------|----------------------|---------|----------|-----------|
