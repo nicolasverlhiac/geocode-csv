@@ -30,7 +30,7 @@ For detailed instructions on building and running the Docker image, please refer
 
 ### 🐳 Using Docker Hub:
 
-1. Pull the Docker image from Docker Hub:
+1. Pull the [Docker image from Docker Hub](https://hub.docker.com/r/nicolasverlhiac/geocode-csv):
 
 ```bash
 docker pull nicolasverlhiac/geocode-csv
@@ -64,7 +64,7 @@ docker build -t nicolasverlhiac/geocode-csv .
 
 This command builds the Docker image using the Dockerfile in the current directory. The -t flag allows you to specify a tag or name for the image. In this example, the image is tagged as nicolasverlhiac/geocode-csv.
 
-2. Once the image is built, you can use it in the same way as described in the "Using Docker Hub" section. **Follow steps 2 to 5** mentioned in the "[Using Docker Hub](#using-docker-hub)" section to geocode your CSV file.
+1. Once the image is built, you can use it in the same way as described in the "Using Docker Hub" section. **Follow steps 2 to 5** mentioned in the "[Using Docker Hub](#-using-docker-hub)" section to geocode your CSV file.
 
 By building the image locally, you have more control over the image and can make modifications if needed. Additionally, building the image locally ensures that you have the latest version of the code and dependencies.
 
