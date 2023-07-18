@@ -1,2 +1,2 @@
 pandas
-googlemaps
+geopy

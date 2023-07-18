@@ -1,14 +1,23 @@
-# Geocode CSV using Google Maps API
+# Geocode CSV using Multiple Geocoding Providers
 
-This repository provides a geocoding solution for CSV files containing contact addresses using the Google Maps API. Geocoding is the process of converting addresses into geographic coordinates (latitude and longitude), enabling businesses and data analysts to leverage location-based information in their applications and analyses.
-It includes a Docker image that utilizes the Google Maps library and Pandas to add latitude and longitude information to contact files. 
+This repository provides a geocoding solution for CSV files containing contact addresses using multiple geocoding providers. Geocoding is the process of converting addresses into geographic coordinates (latitude and longitude), enabling businesses and data analysts to leverage location-based information in their applications and analyses.
+
+The geocoding script is encapsulated in a Docker image, making it easy to deploy and use. The script supports the following geocoding providers:
+
+- Google Maps
+- MapBox
+- OpenCage
+- MapTiler
+- Geoapify
 
 ## Features
 
-- Geocodes CSV files with contact addresses using the Google Maps API
+- Geocodes CSV files with contact addresses using the specified geocoding provider
 - Retrieves latitude and longitude information for each address
 - Adds latitude and longitude to a new column in the CSV file
+- Flexible configuration to choose the geocoding provider based on the API key provided
 - Useful for businesses and data analysts working with address data
+
 
 ## How to use this image
 
@@ -16,29 +25,37 @@ You can use the geocoding solution by directly pulling the Docker image from Doc
 
 _**Note:** Make sure you have Docker installed and running on your system before executing the docker command._
 
-### Using Docker Hub:
+For detailed instructions on building and running the Docker image, please refer to the project documentation.
+
+
+### 🐳 Using Docker Hub:
 
 1. Pull the Docker image from Docker Hub:
 
 ```bash
 docker pull nicolasverlhiac/geocode-csv
 ```
-2. Set up your Google Maps API key:
 
-	* Retrieve your Google Maps API keys from the Google Cloud Console.
-	* Replace your_key with your actual Google Maps API key in the docker command.
-3. Create a `data` directory and place your input CSV file in the `data` directory.
+2. Create a `data` directory and place your input CSV file in the `data` directory.
 
 	* **You need to name the CSV file `input.csv`.**
     * You can use the provided `sample-input.csv` file as a base by duplicating it and renaming the duplicate to `input.csv`. This file already has the required CSV structure and serves as a template for your own data.
-4. Execute the Docker container:
+
+3. Set the environment variables: Depending on the geocoding provider you want to use, set the corresponding API key as an environment variable. The supported environment variables are:
+   - `GOOGLE_API_KEY` for Google Maps API key
+   - `MAPBOX_API_KEY` for MapBox API key
+   - `OPENCAGE_API_KEY` for OpenCage API key
+   - `MAPTILER_API_KEY` for MapTiler API key
+   - `GEOAPIFY_API_KEY` for Geoapify API key
+
+4. Execute the Docker container with the selected environment variable:
 
 ```bash
 docker run --rm -v "$(pwd)/data:/app/csv" -e GOOGLE_API_KEY=your_key nicolasverlhiac/geocode-csv
 ```
 5. After the execution completes, you will find the geocoded CSV `ouput.csv` file with latitude and longitude information in the csv directory.
 
-### Build image
+### 🔧 Build image
 
 1. Build the Docker image:
 ```bash
@@ -60,12 +77,12 @@ You can use the provided `sample-input.csv` file located in `/data` as a base by
 | name                | address                     | postcode | state | city                 | country | latitude | longitude |
 |---------------------|-----------------------------|----------|-------|----------------------|---------|----------|-----------|
 | CAVE ARDONEO        | 768 Avenue du Président JFK | 40280    |       | SAINT PIERRE DU MONT | France  |          |           |
-| LA CAVE A NICO      | 87 Route de Montpellier     | 34110    |       | FRONTIGNAN           | France  |          |           |
+| LA CAVE             | 87 Route de Montpellier     | 34110    |       | FRONTIGNAN           | France  |          |           |
 | ETS BRIAU           | 94 Rue David Johnston       | 33000    |       | BORDEAUX             | France  |          |           |
 
 ## Requirements
 * Docker
-* Google Maps API key
+* Geocoding providers API KEY
 
 ## Supported Architectures
 This geocoding solution supports the following architectures:
@@ -88,8 +105,8 @@ Contributions are welcome! If you encounter any issues or have suggestions for i
 This project is licensed under the  [MIT License](https://opensource.org/license/mit/) .
 
 ## Acknowledgements
-This geocoding solution is built upon the  [Google Maps API](https://developers.google.com/maps/documentation/geocoding/overview) . Special thanks to the contributors of the  [Google Maps Python Client](https://github.com/googlemaps/google-maps-services-python)  library.
+This geocoding solution is built upon the geocoding providers API. Special thanks to the contributors of the [Geopy](https://github.com/geopy/geopy) library.
 
 ## References
-*  [Google Maps API Documentation](https://developers.google.com/maps/documentation/geocoding/overview) 
-*  [Google Maps Python Client Library](https://github.com/googlemaps/google-maps-services-python) 
+*  [Geopy Documentation](https://geopy.readthedocs.io/en/stable/) 
+*  [Geopy](https://github.com/geopy/geopy) 
