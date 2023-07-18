@@ -19,7 +19,7 @@ The geocoding script is encapsulated in a Docker image, making it easy to deploy
 - Useful for businesses and data analysts working with address data
 
 
-## How to use this image
+## Usage
 
 You can use the geocoding solution by directly pulling the Docker image from Docker Hub or by building the image from the source code. 
 
