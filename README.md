@@ -109,4 +109,10 @@ This geocoding solution is built upon the geocoding providers API. Special thank
 
 ## References
 *  [Geopy Documentation](https://geopy.readthedocs.io/en/stable/) 
-*  [Geopy](https://github.com/geopy/geopy) 
+*  [Geopy](https://github.com/geopy/geopy)
+
+## Sponsor
+Geocode CSV is free, open source software made possible by this wonderful sponsor.
+
+![maptiler logo](https://github.com/nicolasverlhiac/geocode-csv/assets/5034521/f2a5a8c4-ac8d-4d4e-acd2-de90e234a33a)
+
