@@ -101,6 +101,38 @@ Whether you're running on a traditional x86 architecture or ARM-based devices, y
 ## Contributing
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
+## Code Style and Standards
+
+### PEP 8 Compliance
+This project strictly follows the PEP 8 style guide for Python code to ensure consistency and improve readability across the codebase. PEP 8 provides a set of rules and guidelines for formatting Python code in a way that is widely accepted by the Python community.
+
+Key aspects of PEP 8 that we adhere to include:
+
+- Indentation: Using 4 spaces per indentation level, never mixing tabs and spaces.
+- Line Length: Limiting lines to a maximum of **79 characters**.
+- Blank Lines: Using blank lines to separate functions and classes, and within functions to indicate logical sections.
+- Imports: Importing modules on separate lines and avoiding wildcard imports.
+- Whitespace: Surrounding operators with a single space on either side, and avoiding extraneous whitespace within lines.
+- Comments: Keeping comments up-to-date and writing them as complete sentences.
+- Naming Conventions: Using `CamelCase` for class names, `lowercase_with_underscores` for function and variable names, and `UPPERCASE_WITH_UNDERSCORES` for constants.
+- Function and Variable Annotations: Following the typing annotation standards introduced in PEP 484 and PEP 526 where applicable.
+
+We encourage contributors to follow these standards when submitting pull requests.
+
+Please note that while we follow PEP 8, we also prioritize readability and practicality over strict adherence when necessary. Certain exceptions to the guidelines might be made if they make the code more readable or more efficient.
+
+### Visual Studio code 
+To assist in adhering to the PEP 8 standards, we recommend using linters like `flake8` and code formatters such as `black` to automatically check and format the code.
+
+Edit User > `setting.json `
+```json
+"[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+```
+
 ## License
 This project is licensed under the  [MIT License](https://opensource.org/license/mit/) .
 
