@@ -4,14 +4,8 @@ import pandas as pd
 import os
 import sys
 import logging
-import warnings
 
-warnings.filterwarnings("ignore", category=DeprecationWarning)
-
-# Configuration des logs
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
-)
+logging.basicConfig(level=logging.INFO)
 
 # Constants
 ADDRESS_COLUMNS = ["name", "address", "postcode", "city", "country"]
