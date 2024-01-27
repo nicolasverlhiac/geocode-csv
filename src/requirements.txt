@@ -1,2 +1,2 @@
-pandas==2.2
-geopy==2.4
+pandas==2.2.*
+geopy==2.4.*

@@ -1,9 +1,12 @@
 from geopy.exc import GeopyError
 from geopy.geocoders import get_geocoder_for_service, GoogleV3
-import pandas as pd
 import os
 import sys
 import logging
+import warnings
+
+warnings.simplefilter(action="ignore", category=DeprecationWarning)
+import pandas as pd
 
 logging.basicConfig(level=logging.INFO)
 
