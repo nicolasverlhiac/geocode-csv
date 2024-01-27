@@ -1,14 +1,13 @@
-# Utiliser une image de base contenant Python
-FROM --platform=$BUILDPLATFORM python:slim-bookworm 
+FROM --platform=$BUILDPLATFORM python:3.12-alpine
 
-# Définir le répertoire de travail dans le conteneur
+# Working directory in the container
 WORKDIR /app
 
-# Copier les fichiers requis dans le conteneur
+# Copy the required files into the container
 COPY ./src /app
 
-# Installer les dépendances Python
+# Installing Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Exécuter le script Python lors du lancement du conteneur
+# Execute Python script when container is launched
 CMD ["python", "geocode.py"]
